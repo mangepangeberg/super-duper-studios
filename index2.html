@@ -89,40 +89,74 @@
         </div>
       </section>
 
-      <!-- Textinnehåll & CTA med kontrollerad radlängd -->
-      <div class="content-container">
-        
-        <!-- Manifest / Värdeerbjudande -->
-        <section class="manifesto-section" aria-label="Om studion">
-          <p class="manifesto-text">
-            Super Duper Studios är ett arkitektkontor som bryr sig lika mycket om smarta kvadratmeter som bra estetik. Vi ritar vackra hem, men ser också till att en 3:a kan bli en 5:a och att varje investering faktiskt ökar husets värde. Oavsett om det gäller en tomt, en ombyggnad eller en idé – vi löser det.
-          </p>
-        </section>
+      <!-- Manifest / Värdeerbjudande -->
+      <section class="manifesto-section" aria-label="Om studion">
+        <p class="manifesto-text">
+          Super Duper Studios är ett arkitektkontor som bryr sig lika mycket om smarta kvadratmeter som bra estetik. Vi ritar vackra hem, men ser också till att en 3:a kan bli en 5:a och att varje investering faktiskt ökar husets värde. Oavsett om det gäller en tomt, en ombyggnad eller en idé – vi löser det.
+        </p>
+      </section>
 
-        <!-- Kontakt & CTA -->
-        <section class="cta-section" aria-label="Kontakt">
+      <!-- SEKTION ETT: Split CTA & Interaktivt Kontaktkort (Hedvig-stil) -->
+      <section class="cta-split-section" aria-label="Bolla ditt projekt">
+        
+        <!-- Vänsterkolumn: Text & Argument -->
+        <div class="cta-split-text">
           <h2 class="cta-heading">Har du en tomt som behöver ett hus?</h2>
           <p class="cta-subtext">
             En planlösning som skaver, eller en 3:a som borde bli en 5:a? Kanske vill du bara bolla hur man maxar värdet på en kåk utan att kasta pengar i sjön? Hörs!
           </p>
-          
-          <div class="contact-details">
-            <p><a href="mailto:hej@superduperstudios.se" class="contact-link link-primary">hej@superduperstudios.se</a></p>
-            <p><a href="tel:+46761345689" class="contact-link">+46 76 134 56 89</a></p>
+          <div class="trust-badge">
+            <span class="badge-icon">✓</span>
+            <span class="badge-text">Kostnadsfri första rådgivning</span>
+          </div>
+        </div>
+
+        <!-- Högerkolumn: Interaktivt Konverteringskort -->
+        <div class="cta-split-card">
+          <div class="card-header">
+            <div class="card-avatar" aria-hidden="true"></div>
+            <div class="card-titles">
+              <span class="card-title">Arkitektur & Rådgivning</span>
+              <span class="card-desc">Bolla din idé med Joacim</span>
+            </div>
           </div>
 
-          <nav class="social-nav" aria-label="Sociala medier">
-            <ul class="social-list">
-              <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></li>
-              <li><a href="https://www.linkedin.com/in/joacimhaag/" target="_blank" rel="noopener">LinkedIn</a></li>
-              <li><a href="https://www.pinterest.com" target="_blank" rel="noopener">Pinterest</a></li>
-            </ul>
-          </nav>
-        </section>
+          <form class="card-form" action="mailto:hej@superduperstudios.se" method="get" enctype="text/plain">
+            <label for="contact-input" class="sr-only">Skriv din e-post eller telefonnummer</label>
+            <input 
+              type="text" 
+              id="contact-input" 
+              name="body" 
+              placeholder="Din e-post eller telefonnummer" 
+              required 
+              class="card-input"
+            >
+            <button type="submit" class="card-btn">Kontakta arkitektbyrån</button>
+          </form>
 
-      </div>
+          <p class="card-footer-note">
+            <a href="mailto:hej@superduperstudios.se">Så hanterar vi personuppgifter</a>
+          </p>
+        </div>
+
+      </section>
 
     </main>
+
+    <!-- SEKTION TVÅ: Minimalistisk Sidfot -->
+    <footer class="site-footer" aria-label="Sidfot">
+      <div class="footer-contact">
+        <a href="mailto:hej@superduperstudios.se" class="footer-link">hej@superduperstudios.se</a>
+        <a href="tel:+46761345689" class="footer-link">+46 76 134 56 89</a>
+      </div>
+      <nav class="footer-social" aria-label="Sociala medier">
+        <ul class="footer-social-list">
+          <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/joacimhaag/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.pinterest.com" target="_blank" rel="noopener">Pinterest</a></li>
+        </ul>
+      </nav>
+    </footer>
 
   </div>
 

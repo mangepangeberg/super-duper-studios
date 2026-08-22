@@ -1,19 +1,27 @@
 /* ==========================================================================
-   SUPER DUPER STUDIOS - EXPERIMENT V2 (FLUID WIDE SCREEN EDITION)
+   SUPER DUPER STUDIOS - EXPERIMENT V2 (HEDVIG-INSPIRED SPLIT CTA)
    ========================================================================== */
 
 :root {
   /* Färgpalett */
   --color-bg: #FFFFFF;
-  --color-text: #000000;
-  --color-text-muted: #666666;
+  --color-text: #111111;
+  --color-text-muted: #555555;
+  --color-card-bg: #FFFFFF;
+  --color-input-bg: #F4F4F4;
   --color-accent: #2B1BDE;
-  --color-border: #E5E5E5;
+  --color-border: #E8E8E8;
+  --color-badge-bg: #F0F0F0;
+  
+  /* Radier & Skuggor */
+  --radius-card: 24px;
+  --radius-input: 12px;
+  --shadow-card: 0 12px 36px rgba(0, 0, 0, 0.05);
 
   /* Typografi */
   --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   
-  /* Fluid Typografiskala via clamp(min, val, max) */
+  /* Fluid Typografiskala */
   --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   --fs-base: clamp(0.95rem, 0.9rem + 0.3vw, 1.125rem);
   --fs-md: clamp(1.2rem, 1.05rem + 0.75vw, 1.65rem);
@@ -21,13 +29,12 @@
 
   /* Fluid Spacing & Layout */
   --site-max-width: 1440px;
-  --text-max-width: 780px;
   --site-padding: clamp(1rem, 0.5rem + 2vw, 3rem);
   --gap-grid: clamp(1rem, 0.75rem + 1vw, 2rem);
-  --section-space: clamp(3.5rem, 2.5rem + 3.5vw, 6.5rem);
+  --section-space: clamp(4rem, 3rem + 3.5vw, 7rem);
 }
 
-/* Base Reset & Box-Sizing */
+/* Base Reset */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -57,6 +64,17 @@ a:hover, a:focus-visible {
   text-decoration: underline;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 .skip-link {
   position: absolute;
   top: -100px;
@@ -71,7 +89,7 @@ a:hover, a:focus-visible {
 }
 
 /* ==========================================================================
-   LAYOUT STRUCTURE
+   LAYOUT SHELL
    ========================================================================== */
 
 .page-shell {
@@ -101,7 +119,7 @@ a:hover, a:focus-visible {
   color: var(--color-text);
 }
 
-/* 2. Projekt (3-kolumners Grid på Desktop) */
+/* 2. Projekt (3-kolumns Grid) */
 .work-section {
   margin-bottom: var(--section-space);
 }
@@ -161,14 +179,10 @@ a:hover, a:focus-visible {
   letter-spacing: 0.05em;
 }
 
-/* 3. Textinnehåll & CTA (Centrerat eller vänsterställt med läsbredd) */
-.content-container {
-  max-width: var(--text-max-width);
-  margin: 0; /* Vänsterställt med snygg luft till höger på stora skärmar */
-}
-
+/* 3. Manifest */
 .manifesto-section {
   margin-bottom: var(--section-space);
+  max-width: 900px;
 }
 
 .manifesto-text {
@@ -178,10 +192,24 @@ a:hover, a:focus-visible {
   font-weight: 400;
 }
 
-.cta-section {
-  margin-bottom: var(--section-space);
+/* ==========================================================================
+   SEKTION ETT: SPLIT CTA & FORMULÄRKORT (HEDVIG-MÖNSTER)
+   ========================================================================== */
+
+.cta-split-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 1.5rem + 3vw, 4rem);
+  align-items: center;
+  padding-top: clamp(2.5rem, 2rem + 2.5vw, 4.5rem);
   border-top: 1px solid var(--color-border);
-  padding-top: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+  margin-bottom: var(--section-space);
+}
+
+@media (min-width: 860px) {
+  .cta-split-section {
+    grid-template-columns: 1.2fr 1fr;
+  }
 }
 
 .cta-heading {
@@ -194,37 +222,186 @@ a:hover, a:focus-visible {
 
 .cta-subtext {
   font-size: var(--fs-base);
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--color-text-muted);
-  margin-bottom: 2rem;
-}
-
-.contact-details {
-  font-size: var(--fs-base);
-  line-height: 1.6;
   margin-bottom: 1.75rem;
+  max-width: 580px;
 }
 
-.link-primary {
+/* Tillit / Badge */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-badge-bg);
+  padding: 0.4rem 0.85rem;
+  border-radius: 100px;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+}
+
+.badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: #000000;
+  color: #FFFFFF;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+/* Interaktivt Hedvig-kort */
+.cta-split-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: clamp(1.5rem, 1.2rem + 1vw, 2.25rem);
+  box-shadow: var(--shadow-card);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2B1BDE 0%, #76E0C2 100%);
+  flex-shrink: 0;
+}
+
+.card-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.card-desc {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card-input {
+  width: 100%;
+  background-color: var(--color-input-bg);
+  border: 1px solid transparent;
+  border-radius: var(--radius-input);
+  padding: 1rem 1.15rem;
+  font-size: var(--fs-base);
+  font-family: inherit;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.card-input:focus {
+  border-color: #000000;
+  background-color: #FFFFFF;
+}
+
+.card-input::placeholder {
+  color: #888888;
+}
+
+.card-btn {
+  width: 100%;
+  background-color: #000000;
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-input);
+  padding: 1rem;
+  font-size: var(--fs-base);
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.card-btn:hover {
+  opacity: 0.9;
+}
+
+.card-btn:active {
+  transform: scale(0.99);
+}
+
+.card-footer-note {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.card-footer-note a {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.social-nav .social-list {
-  list-style: none;
+/* ==========================================================================
+   SEKTION TVÅ: MINIMALISTISK SIDFOT
+   ========================================================================== */
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding-top: clamp(2rem, 1.5rem + 1.5vw, 3rem);
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.footer-contact {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
   font-size: var(--fs-base);
 }
 
-/* Responsiv anpassning för små mobiler */
-@media (max-width: 520px) {
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-social-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: var(--fs-base);
+  text-align: right;
+}
+
+/* Responsiv anpassning för små skärmar */
+@media (max-width: 580px) {
   .site-header {
     flex-direction: column;
     gap: 1rem;
   }
   .header-contact {
+    text-align: left;
+  }
+  .site-footer {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .footer-social-list {
     text-align: left;
   }
 }
