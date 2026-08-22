@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google Analytics 4 (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVNB68TWPF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NVNB68TWPF');
+  </script>
+
   <!-- Primär SEO & Metadata -->
   <title>Super Duper – Moderna trähus och arkitektur</title>
   <meta name="description" content="Super Duper skapar hållbara, arkitektritade trähus anpassade för det nordiska landskapet. Utforska våra koncept och miljöer.">
@@ -15,72 +25,77 @@
   <meta property="og:url" content="https://www.superduperstudios.se/">
   <meta property="og:title" content="Super Duper – Moderna trähus och arkitektur">
   <meta property="og:description" content="Hållbara, arkitektritade trähus anpassade för det nordiska landskapet.">
-  <meta property="og:image" content="https://www.superduperstudios.se/assets/img/hero-desktop-01.jpg">
+  <meta property="og:image" content="https://www.superduperstudios.se/assets/img/super-duper-studios-desktop-01.jpg">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Super Duper – Moderna trähus och arkitektur">
-  <meta name="twitter:description" content="Hållbara, arkitektritade trähus anpassade för det nordiska landskapet.">
-  <meta name="twitter:image" content="https://www.superduperstudios.se/assets/img/hero-desktop-01.jpg">
-
-  <!-- Förhandshämtning (Preload) för sömlöst bildspel utan fördröjning -->
-  <link rel="preload" as="image" href="assets/img/hero-desktop-01.jpg" media="(min-width: 768px)" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/img/hero-mobile-01.jpg" media="(max-width: 767px)" fetchpriority="high">
-
-  <link rel="preload" as="image" href="assets/img/hero-desktop-02.jpg" media="(min-width: 768px)">
-  <link rel="preload" as="image" href="assets/img/hero-mobile-02.jpg" media="(max-width: 767px)">
-
-  <link rel="preload" as="image" href="assets/img/hero-desktop-03.jpg" media="(min-width: 768px)">
-  <link rel="preload" as="image" href="assets/img/hero-mobile-03.jpg" media="(max-width: 767px)">
-
-  <link rel="preload" as="image" href="assets/img/hero-desktop-04.jpg" media="(min-width: 768px)">
-  <link rel="preload" as="image" href="assets/img/hero-mobile-04.jpg" media="(max-width: 767px)">
+  <!-- Preload Bild 1 för optimal LCP -->
+  <link rel="preload" as="image" href="assets/img/super-duper-studios-desktop-01.jpg" media="(min-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/super-duper-studios-mobile-01.jpg" media="(max-width: 767px)" fetchpriority="high">
 
   <!-- Favicon & Stilark -->
   <link rel="icon" type="image/svg+xml" href="assets/img/logo-superduper.svg">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Komponentskript -->
+  <script type="module" src="js/components.js" defer></script>
 </head>
 <body>
 
-  <main>
-    <section class="hero-wrapper">
+  <a href="#main-content" class="skip-link">Hoppa till innehållet</a>
+
+  <main id="main-content">
+    <section class="hero-wrapper" aria-label="Arkitektoniskt bildspel">
       
-      <!-- Bildspel: 4 moduler staplade i CSS Grid -->
-      <div class="slideshow-container">
+      <!-- Bildspel -->
+      <div class="slideshow-container" aria-hidden="true">
         
         <!-- Bild 1 -->
         <picture class="slide slide-1">
-          <source media="(min-width: 768px)" srcset="assets/img/hero-desktop-01.jpg">
-          <img src="assets/img/hero-mobile-01.jpg" alt="Super Duper arkitektritat trähus miljö 1" class="hero-img" loading="eager" fetchpriority="high" decoding="sync">
+          <source media="(min-width: 768px)" srcset="assets/img/super-duper-studios-desktop-01.jpg">
+          <img src="assets/img/super-duper-studios-mobile-01.jpg" alt="Super Duper arkitektritat trähus 1" class="hero-img" width="1920" height="1080" fetchpriority="high" decoding="sync">
         </picture>
 
         <!-- Bild 2 -->
         <picture class="slide slide-2">
-          <source media="(min-width: 768px)" srcset="assets/img/hero-desktop-02.jpg">
-          <img src="assets/img/hero-mobile-02.jpg" alt="Super Duper arkitektritat trähus miljö 2" class="hero-img" loading="eager" decoding="async">
+          <source media="(min-width: 768px)" srcset="assets/img/super-duper-studios-desktop-02.jpg">
+          <img src="assets/img/super-duper-studios-mobile-02.jpg" alt="Super Duper modernt trähus 2" class="hero-img" width="1920" height="1080" loading="lazy" decoding="async">
         </picture>
 
         <!-- Bild 3 -->
         <picture class="slide slide-3">
-          <source media="(min-width: 768px)" srcset="assets/img/hero-desktop-03.jpg">
-          <img src="assets/img/hero-mobile-03.jpg" alt="Super Duper arkitektritat trähus miljö 3" class="hero-img" loading="eager" decoding="async">
+          <source media="(min-width: 768px)" srcset="assets/img/super-duper-studios-desktop-03.jpg">
+          <img src="assets/img/super-duper-studios-mobile-03.jpg" alt="Interiör i arkitektritat trähus 3" class="hero-img" width="1920" height="1080" loading="lazy" decoding="async">
         </picture>
 
         <!-- Bild 4 -->
         <picture class="slide slide-4">
-          <source media="(min-width: 768px)" srcset="assets/img/hero-desktop-04.jpg">
-          <img src="assets/img/hero-mobile-04.jpg" alt="Super Duper arkitektritat trähus miljö 4" class="hero-img" loading="eager" decoding="async">
+          <source media="(min-width: 768px)" srcset="assets/img/super-duper-studios-desktop-04.jpg">
+          <img src="assets/img/super-duper-studios-mobile-04.jpg" alt="Hållbara träfasader och detaljarbete 4" class="hero-img" width="1920" height="1080" loading="lazy" decoding="async">
         </picture>
 
       </div>
 
-      <!-- Krispig SVG-logotyp centrerad över bildspelet -->
+      <!-- Logotyp Overlay -->
       <div class="hero-overlay-content">
-        <img src="assets/img/logo-superduper.svg" alt="Super Duper Studios" class="hero-logo">
+        <img src="assets/img/logo-superduper.svg" alt="Super Duper Studios logotyp" class="hero-logo" width="310" height="100">
+      </div>
+
+      <!-- Kontaktknapp -->
+      <div class="hero-ui-bar">
+        <button 
+          type="button" 
+          class="btn-contact-pill" 
+          data-open-contact 
+          data-track="cta_click" 
+          data-label="open_contact_modal" 
+          aria-haspopup="dialog">
+          <span>Kontakt</span>
+        </button>
       </div>
 
     </section>
   </main>
+
+  <div id="contact-modal-mount"></div>
 
 </body>
 </html>
