@@ -18,11 +18,11 @@
   <title>Super Duper Studios | Skräddarsydd arkitektur & smarta kvadratmeter</title>
   <meta name="title" content="Super Duper Studios | Skräddarsydd arkitektur & smarta kvadratmeter">
   <meta name="description" content="Vi ritar unika, skräddarsydda hus och optimerar planlösningar för vanlig plånbok. Få ett arkitektritat hem anpassat för din tomt utan att det kostar mer än ett kataloghus.">
-  <meta name="author" content="Super Duper Studios">
-  <meta name="robots" content="index, follow">
+  <meta name="author" content="Superduper AB">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://www.superduperstudios.se/">
 
-  <!-- Open Graph / Facebook / LinkedIn -->
+  <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.superduperstudios.se/">
   <meta property="og:site_name" content="Super Duper Studios">
@@ -40,73 +40,140 @@
   <meta name="twitter:description" content="Skippa standardkatalogen. Vi ritar skräddarsydda hus och maximerar varje kvadratmeter för din tomt och budget.">
   <meta name="twitter:image" content="https://www.superduperstudios.se/assets/img/super-duper-studios-desktop-01.jpg">
 
-  <!-- Strukturerad data för Google (Schema.org / JSON-LD) -->
+  <!-- Entitets-SEO & Schema.org JSON-LD (Knowledge Graph + E-E-A-T) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Super Duper Studios",
-    "image": "https://www.superduperstudios.se/assets/img/super-duper-studios-desktop-01.jpg",
-    "url": "https://www.superduperstudios.se/",
-    "telephone": "+46761345689",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Johan Olof Wallins Väg 17",
-      "addressCountry": "SE"
-    },
-    "description": "Arkitektstudio som ritar skräddarsydda bostäder och optimerar planlösningar för att maximera yta och fastighetsvärde."
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.superduperstudios.se/#organization",
+        "name": "Superduper AB",
+        "alternateName": "Super Duper Studios",
+        "legalName": "Superduper AB",
+        "url": "https://www.superduperstudios.se/",
+        "logo": "https://www.superduperstudios.se/assets/img/logo-superduper.svg",
+        "image": "https://www.superduperstudios.se/assets/img/super-duper-studios-desktop-01.jpg",
+        "telephone": "+46761345689",
+        "email": "hej@superduperstudios.se",
+        "priceRange": "$$",
+        "sameAs": [
+          "https://www.allabolag.se/foretag/superduper-ab/solna/arkitekter/2KG66BYI5YCJ5",
+          "https://www.linkedin.com/in/joacimhaag/"
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Joacim Haag",
+          "jobTitle": "Arkitekt & Grundare",
+          "sameAs": "https://www.linkedin.com/in/joacimhaag/"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Johan Olof Wallins Väg 17",
+          "addressLocality": "Solna",
+          "postalCode": "171 64",
+          "addressCountry": "SE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 59.3601,
+          "longitude": 18.0009
+        },
+        "knowsAbout": [
+          "Arkitektur",
+          "Trähus",
+          "Bygglov",
+          "Planlösningsoptimering",
+          "Smarta kvadratmeter",
+          "Bostadsutveckling"
+        ],
+        "description": "Arkitektstudio specialiserad på skräddarsydda moderna trähus, tomtanpassad arkitektur och smarta kvadratmetrar för privatpersoner."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.superduperstudios.se/#website",
+        "url": "https://www.superduperstudios.se/",
+        "name": "Super Duper Studios",
+        "publisher": {
+          "@id": "https://www.superduperstudios.se/#organization"
+        },
+        "inLanguage": "sv-SE"
+      }
+    ]
   }
   </script>
 
-  <!-- Blå SVG Favicon (#2B1BDE) -->
+  <!-- Favicon & Preload -->
   <link rel="icon" type="image/svg+xml" href="assets/img/super-duper-favicon.svg?v=1">
-
-  <!-- Preload Bild 1 för optimal LCP -->
   <link rel="preload" as="image" href="assets/img/super-duper-studios-desktop-01.jpg" media="(min-width: 768px)" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/img/super-duper-studios-mobile-01.jpg" media="(max-width: 767px)" fetchpriority="high">
-
-  <!-- Stilark -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Micro-script för meny -->
+  <script src="js/menu.js" defer></script>
 </head>
 <body>
 
   <a href="#main-content" class="skip-link">Hoppa till innehållet</a>
 
+  <!-- Header: Hamburgare (vänster) + Logotyp (höger) -->
+  <header class="site-header">
+    <button id="menu-toggle" class="menu-btn" aria-expanded="false" aria-controls="menu-drawer" aria-label="Öppna navigationsmeny">
+      <span class="menu-btn-bar"></span>
+      <span class="menu-btn-bar"></span>
+      <span class="menu-btn-bar"></span>
+    </button>
+
+    <a href="/" aria-label="Super Duper Studios Startsida">
+      <img src="assets/img/logo-superduper.svg" alt="Super Duper Studios logotyp" class="header-logo-img" width="220" height="70">
+    </a>
+  </header>
+
+  <!-- Fullskärmsmeny Overlay -->
+  <nav id="menu-drawer" class="menu-drawer" aria-label="Huvudmeny">
+    <ul class="menu-links">
+      <li><a href="/faq.html" class="menu-link">Vanliga frågor & Pris</a></li>
+      <li><a href="/projekt.html" class="menu-link">Utvalda projekt</a></li>
+      <li><a href="/koncept.html" class="menu-link">Smarta kvadratmeter</a></li>
+      <li><a href="#kontakt" class="menu-link">Kontakta studion</a></li>
+    </ul>
+
+    <div class="menu-footer-contact">
+      <p><strong>Superduper AB</strong><br>
+      Johan Olof Wallins Väg 17, Solna<br>
+      Tel: <a href="tel:+46761345689">+46 76 134 56 89</a><br>
+      E-post: <a href="mailto:hej@superduperstudios.se">hej@superduperstudios.se</a></p>
+    </div>
+  </nav>
+
+  <!-- Huvudinnehåll: Bildspel + Centrerad H1, Ingress & CTA -->
   <main id="main-content">
-    <section class="hero-wrapper" aria-label="Arkitektoniskt bildspel">
+    <section class="hero-wrapper" aria-label="Super Duper Studios Hero">
       
       <!-- Bildspel -->
       <div class="slideshow-container" aria-hidden="true">
-        
-        <!-- Bild 1 -->
         <picture class="slide slide-1">
           <source media="(min-width: 768px)" srcset="assets/img/super-duper-studios-desktop-01.jpg">
-          <img src="assets/img/super-duper-studios-mobile-01.jpg" alt="Super Duper arkitektritat trähus 1" class="hero-img" width="1920" height="1080" fetchpriority="high" decoding="sync">
+          <img src="assets/img/super-duper-studios-mobile-01.jpg" alt="Arkitektritat modernt trähus" class="hero-img" width="1920" height="1080" fetchpriority="high" decoding="sync">
         </picture>
-
-        <!-- Bild 2 -->
         <picture class="slide slide-2">
           <source media="(min-width: 768px)" srcset="assets/img/super-duper-studios-desktop-02.jpg">
-          <img src="assets/img/super-duper-studios-mobile-02.jpg" alt="Super Duper modernt trähus 2" class="hero-img" width="1920" height="1080" loading="lazy" decoding="async">
+          <img src="assets/img/super-duper-studios-mobile-02.jpg" alt="Exteriör trähusdetaljer" class="hero-img" width="1920" height="1080" loading="lazy" decoding="async">
         </picture>
-
-        <!-- Bild 3 -->
         <picture class="slide slide-3">
           <source media="(min-width: 768px)" srcset="assets/img/super-duper-studios-desktop-03.jpg">
-          <img src="assets/img/super-duper-studios-mobile-03.jpg" alt="Interiör i arkitektritat trähus 3" class="hero-img" width="1920" height="1080" loading="lazy" decoding="async">
+          <img src="assets/img/super-duper-studios-mobile-03.jpg" alt="Interiör i arkitektritat hus" class="hero-img" width="1920" height="1080" loading="lazy" decoding="async">
         </picture>
-
-        <!-- Bild 4 -->
         <picture class="slide slide-4">
           <source media="(min-width: 768px)" srcset="assets/img/super-duper-studios-desktop-04.jpg">
-          <img src="assets/img/super-duper-studios-mobile-04.jpg" alt="Hållbara träfasader och detaljarbete 4" class="hero-img" width="1920" height="1080" loading="lazy" decoding="async">
+          <img src="assets/img/super-duper-studios-mobile-04.jpg" alt="Fasad och takdetaljer" class="hero-img" width="1920" height="1080" loading="lazy" decoding="async">
         </picture>
-
       </div>
 
-      <!-- Logotyp Overlay -->
+      <!-- Hero Copy & CTA -->
       <div class="hero-overlay-content">
-        <img src="assets/img/logo-superduper.svg" alt="Super Duper Studios logotyp" class="hero-logo" width="310" height="100">
+        <h1 class="hero-title">Skräddarsydd arkitektur.<br>Smarta kvadratmeter.</h1>
+        <p class="hero-lead">Vi ritar unika trähus för din tomt och budget – utan att det kostar mer än ett kataloghus.</p>
+        <a href="#kontakt" class="btn-cta">Starta ditt projekt</a>
       </div>
 
     </section>
