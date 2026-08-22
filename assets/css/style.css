@@ -10,9 +10,9 @@
 
   --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   
-  /* Fluid Spacing & Layout */
+  /* Fluid Spacing & Layout (Minskad 25%) */
   --site-padding: clamp(1.25rem, 4vw, 3rem);
-  --logo-max-width: clamp(260px, 35vw, 420px);
+  --logo-max-width: clamp(195px, 26vw, 315px);
 }
 
 /* ==========================================================================
