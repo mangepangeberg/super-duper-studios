@@ -1,0 +1,225 @@
+/* ==========================================================================
+   SUPER DUPER STUDIOS - EXPERIMENT V2 (DESIGN TOKENS & FLUID CORE)
+   ========================================================================== */
+
+:root {
+  /* Färgpalett */
+  --color-bg: #FFFFFF;
+  --color-text: #000000;
+  --color-text-muted: #666666;
+  --color-accent: #2B1BDE;
+  --color-border: #E5E5E5;
+
+  /* Typografi */
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Fluid Typografiskala via clamp(min, val, max) */
+  --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --fs-base: clamp(0.95rem, 0.9rem + 0.35vw, 1.125rem);
+  --fs-md: clamp(1.15rem, 1.05rem + 0.5vw, 1.35rem);
+  --fs-lg: clamp(1.5rem, 1.3rem + 1vw, 2.25rem);
+  --fs-xl: clamp(2rem, 1.7rem + 1.8vw, 3.25rem);
+
+  /* Fluid Spacing & Layout */
+  --site-max-width: 800px;
+  --site-padding: clamp(1rem, 0.8rem + 1.2vw, 2rem);
+  --gap-grid: clamp(0.75rem, 0.5rem + 0.8vw, 1.25rem);
+  --section-space: clamp(3rem, 2.5rem + 3vw, 5.5rem);
+}
+
+/* Base Reset & Box-Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover, a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Tillgänglighet: Skip Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ==========================================================================
+   LAYOUT STRUCTURE
+   ========================================================================== */
+
+.page-shell {
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  padding: var(--site-padding);
+}
+
+/* 1. Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: clamp(1.5rem, 1.2rem + 1.5vw, 3rem);
+}
+
+.brand-logo {
+  width: clamp(130px, 110px + 5vw, 180px);
+  height: auto;
+}
+
+.header-contact {
+  font-size: var(--fs-xs);
+  text-align: right;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+/* 2. Projekt (Work Section) */
+.work-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-grid);
+  margin-bottom: var(--section-space);
+}
+
+.project-media {
+  background-color: #f2f2f2;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.project-media img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-media img {
+  transform: scale(1.02);
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 0.25rem;
+}
+
+.project-title {
+  font-size: var(--fs-base);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.project-tag {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 2-kolumns Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap-grid);
+}
+
+/* 3. Manifest / Om oss */
+.manifesto-section {
+  margin-bottom: var(--section-space);
+  padding-right: clamp(0rem, 0rem + 5vw, 4rem);
+}
+
+.manifesto-text {
+  font-size: var(--fs-md);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+/* 4. CTA & Kontakt */
+.cta-section {
+  margin-bottom: var(--section-space);
+  border-top: 1px solid var(--color-border);
+  padding-top: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+}
+
+.cta-heading {
+  font-size: var(--fs-xl);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.cta-subtext {
+  font-size: var(--fs-base);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.contact-details {
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.link-primary {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.social-nav .social-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: var(--fs-base);
+}
+
+/* ==========================================================================
+   RESPONSIVA BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 480px) {
+  .site-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .header-contact {
+    text-align: left;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
