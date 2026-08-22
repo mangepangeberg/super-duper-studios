@@ -25,9 +25,9 @@
   <meta name="author" content="Superduper AB">
   <meta name="robots" content="noindex, nofollow">
 
-  <!-- Favicon & Separat Stilark för Experimentet -->
+  <!-- Favicon & Stilark -->
   <link rel="icon" type="image/svg+xml" href="assets/img/super-duper-favicon.svg?v=1">
-  <link rel="stylesheet" href="assets/css/style-2.css">
+  <link rel="stylesheet" href="assets/css/style2.css">
 </head>
 <body>
 
@@ -49,72 +49,78 @@
 
     <main id="main-content">
       
-      <!-- Utvalda Projekt (Asymmetriskt Grid) -->
+      <!-- Utvalda Projekt: 3-kolumns Grid på Desktop -->
       <section class="work-section" aria-label="Utvalda projekt">
-        
-        <!-- Huvudprojekt (Full bredd) -->
-        <article class="project-card featured">
-          <figure class="project-media">
-            <img src="assets/img/super-duper-studios-desktop-01.jpg" alt="Johanneslund i Täby" width="1200" height="800" loading="eager">
-          </figure>
-          <div class="project-info">
-            <h2 class="project-title"><a href="#">Johanneslund, Täby &rarr;</a></h2>
-            <span class="project-tag">TÄBY</span>
-          </div>
-        </article>
-
-        <!-- Två-kolumns Grid -->
         <div class="project-grid">
+          
+          <!-- Projekt 1 -->
           <article class="project-card">
             <figure class="project-media">
-              <img src="assets/img/super-duper-studios-desktop-02.jpg" alt="Bullerbyn i Örebro" width="600" height="600" loading="lazy">
+              <img src="assets/img/super-duper-studios-desktop-01.jpg" alt="Johanneslund i Täby" width="800" height="600" loading="eager">
             </figure>
             <div class="project-info">
-              <h3 class="project-title"><a href="#">Bullerbyn &rarr;</a></h3>
+              <h2 class="project-title"><a href="#">Johanneslund, Täby &rarr;</a></h2>
+              <span class="project-tag">TÄBY</span>
+            </div>
+          </article>
+
+          <!-- Projekt 2 -->
+          <article class="project-card">
+            <figure class="project-media">
+              <img src="assets/img/super-duper-studios-desktop-02.jpg" alt="Bullerbyn i Örebro" width="800" height="600" loading="lazy">
+            </figure>
+            <div class="project-info">
+              <h2 class="project-title"><a href="#">Bullerbyn &rarr;</a></h2>
               <span class="project-tag">ÖREBRO</span>
             </div>
           </article>
 
+          <!-- Projekt 3 -->
           <article class="project-card">
             <figure class="project-media">
-              <img src="assets/img/super-duper-studios-desktop-03.jpg" alt="Valdemarsstigen i Göteborg" width="600" height="600" loading="lazy">
+              <img src="assets/img/super-duper-studios-desktop-03.jpg" alt="Valdemarsstigen i Göteborg" width="800" height="600" loading="lazy">
             </figure>
             <div class="project-info">
-              <h3 class="project-title"><a href="#">Valdemarsstigen &rarr;</a></h3>
+              <h2 class="project-title"><a href="#">Valdemarsstigen &rarr;</a></h2>
               <span class="project-tag">GÖTEBORG</span>
             </div>
           </article>
+
         </div>
-
       </section>
 
-      <!-- Manifest / Värdeerbjudande -->
-      <section class="manifesto-section" aria-label="Om studion">
-        <p class="manifesto-text">
-          Super Duper Studios är ett arkitektkontor som bryr sig lika mycket om smarta kvadratmeter som bra estetik. Vi ritar vackra hem, men ser också till att en 3:a kan bli en 5:a och att varje investering faktiskt ökar husets värde. Oavsett om det gäller en tomt, en ombyggnad eller en idé – vi löser det.
-        </p>
-      </section>
-
-      <!-- Kontakt & CTA -->
-      <section class="cta-section" aria-label="Kontakt">
-        <h2 class="cta-heading">Har du en tomt som behöver ett hus?</h2>
-        <p class="cta-subtext">
-          En planlösning som skaver, eller en 3:a som borde bli en 5:a? Kanske vill du bara bolla hur man maxar värdet på en kåk utan att kasta pengar i sjön? Hörs!
-        </p>
+      <!-- Textinnehåll & CTA med kontrollerad radlängd -->
+      <div class="content-container">
         
-        <div class="contact-details">
-          <p><a href="mailto:hej@superduperstudios.se" class="contact-link link-primary">hej@superduperstudios.se</a></p>
-          <p><a href="tel:+46761345689" class="contact-link">+46 76 134 56 89</a></p>
-        </div>
+        <!-- Manifest / Värdeerbjudande -->
+        <section class="manifesto-section" aria-label="Om studion">
+          <p class="manifesto-text">
+            Super Duper Studios är ett arkitektkontor som bryr sig lika mycket om smarta kvadratmeter som bra estetik. Vi ritar vackra hem, men ser också till att en 3:a kan bli en 5:a och att varje investering faktiskt ökar husets värde. Oavsett om det gäller en tomt, en ombyggnad eller en idé – vi löser det.
+          </p>
+        </section>
 
-        <nav class="social-nav" aria-label="Sociala medier">
-          <ul class="social-list">
-            <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="https://www.linkedin.com/in/joacimhaag/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://www.pinterest.com" target="_blank" rel="noopener">Pinterest</a></li>
-          </ul>
-        </nav>
-      </section>
+        <!-- Kontakt & CTA -->
+        <section class="cta-section" aria-label="Kontakt">
+          <h2 class="cta-heading">Har du en tomt som behöver ett hus?</h2>
+          <p class="cta-subtext">
+            En planlösning som skaver, eller en 3:a som borde bli en 5:a? Kanske vill du bara bolla hur man maxar värdet på en kåk utan att kasta pengar i sjön? Hörs!
+          </p>
+          
+          <div class="contact-details">
+            <p><a href="mailto:hej@superduperstudios.se" class="contact-link link-primary">hej@superduperstudios.se</a></p>
+            <p><a href="tel:+46761345689" class="contact-link">+46 76 134 56 89</a></p>
+          </div>
+
+          <nav class="social-nav" aria-label="Sociala medier">
+            <ul class="social-list">
+              <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/in/joacimhaag/" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="https://www.pinterest.com" target="_blank" rel="noopener">Pinterest</a></li>
+            </ul>
+          </nav>
+        </section>
+
+      </div>
 
     </main>
 
