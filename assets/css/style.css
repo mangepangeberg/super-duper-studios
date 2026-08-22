@@ -1,0 +1,76 @@
+/* ==========================================================================
+   1. DESIGN TOKENS
+   ========================================================================== */
+:root {
+  --color-bg: #ffffff;
+  --color-text-main: #000000;
+  --transition-smooth: 0.3s ease;
+}
+
+/* ==========================================================================
+   2. RESET & BAS
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   3. HERO MED ART DIRECTION (GRID STACKING)
+   ========================================================================== */
+.hero-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+  width: 100vw;
+  min-height: 100svh; /* Stöd för Dynamic/Small Viewport Height på mobil */
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Både bakgrundsbild och logotyp delar exakt samma grid-koordinat */
+.hero-media,
+.hero-overlay-content {
+  grid-area: 1 / 1;
+}
+
+/* Bildbehållaren fyller hela ytan */
+.hero-media {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Logotypen ovanpå */
+.hero-overlay-content {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  pointer-events: none; /* Klick går igenom loggan om du har länkar bakom */
+}
+
+.hero-logo {
+  /* Skalar flytande mellan 220px på mobil och upp till 680px på stor desktop */
+  width: clamp(220px, 45vw, 680px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.15));
+}
